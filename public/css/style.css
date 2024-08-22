@@ -1,0 +1,678 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Matter;
+}
+
+*::selection{
+    color: white;
+    background-color: black;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#cursor{
+    width: .8vw;
+    height: .8vw;
+    background-color: black;
+    /* border: 1.6px solid black; */
+    position: fixed;
+    border-radius: 50%;
+    z-index: 100;
+    box-shadow: 3px 5px 15px rgb(0, 0, 0, .8);
+}
+
+#main{
+    width: 100%;
+    background-color: white;
+}
+
+#home{
+    width: 100%;
+    min-height:100vh ;
+}
+
+#nav{
+    width: 100%;
+    padding:5px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+/* #nav img{
+    width: 90px;
+} */
+
+.LogoContainer svg {
+    width: 7vw;
+}
+
+
+
+#nav #right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+#nav a{
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+    font-size: 1.15rem;
+    letter-spacing: -1px;
+    padding: .8vw 1vw;
+    border-radius: .6vw;
+}
+
+#nav a:nth-child(1){
+    /* background-color: none; */
+    transition: all .4s ease-in-out;
+}
+
+#nav a:nth-child(1):hover{
+    background: linear-gradient(90deg, rgb(0, 140, 255), rgb(252, 252, 252));
+    box-shadow: 5px 0px 18px rgb(0, 0, 0, .5);
+}
+
+#nav a:nth-child(2){
+    background-color: transparent;
+    transition: all .4s ease-in-out;
+}
+
+#nav a:nth-child(2):hover{
+    background-color: rgb(23, 145, 211);
+    box-shadow: 5px 0px 18px rgb(0, 0, 0, .5);
+}
+
+/* navScrollBar */
+.menuScrollBar{
+    position: absolute;
+    left: 0;
+    top: 0;   
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    transform: translateY(-100%);
+    background-color: black;
+    color: white;
+    transition: transform .4s ease-in-out;
+}
+
+.menuScrollBarActive{
+    position: fixed;
+    left: 0;
+    top: 0;   
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    transform: translateY(0);
+    background-color: rgb(19, 19, 19);
+    color: white;
+}
+
+
+
+.menuScrollBar ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+    height: 100%;
+}
+
+/* list style image */
+
+.menuScrollBar a i{
+    font-size: 1vw;
+}
+
+/* list style image ends here */
+
+
+.menuScrollBar a{
+    display: flex;
+    gap: 1vw;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(239, 223, 194);
+}
+
+.menuScrollBar a h3{
+    font-size: 1.5vw;
+    font-weight: 100;
+    letter-spacing: -1px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    transition: background-color 0.4s ease-in-out;
+    z-index: 200;
+}
+
+.container div{
+    width: 1.8vw;
+    height: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.container:hover{
+    background-color: black;
+}
+
+.container:hover div span{
+    height:.2vw ;
+    background-color: rgb(247, 247, 247);
+    
+}
+
+/* menuicon colors on menubar active */
+.containerActive:hover{
+    background-color: rgb(255, 255, 255);
+}
+.containerActive:hover div span{
+    height:.2vw ;
+    background-color: rgb(0, 0, 0);
+}
+
+
+.container div span{
+    background-color: black;
+    height: .29vw;
+    border-radius: 20px;
+}
+
+
+.container div span:nth-child(1){
+    width: 60%;
+}
+
+.container div span:nth-child(3){
+    width: 60%;
+    position: relative;
+    left: 40%;
+}
+
+
+/* example class for toggle navIcon*/
+.example div{
+    position: fixed;
+}
+.example div span{
+    background-color: rgb(239, 223, 194);
+    transition: background-color .4s ease-in-out;
+}
+
+.example div span{
+    height: .25vw;
+}
+.example div:hover span{
+    background-color: black;
+}
+.example div span:nth-child(1) {
+    transform: translate3d(.06vw,.11vw,0) rotate(49.5deg);
+}
+.example div span:nth-child(2) {
+    transform:  rotate(-45deg);
+}
+.example div span:nth-child(3) {
+    transform: translate3d(-.06vw,-.11vw,0) rotate(49.5deg);
+}
+
+.container div span{
+    transition: transform .3s ease-in-out, dispaly .2s ease-in-out;
+}
+
+
+#homemain{
+    width: 100%;
+    padding: 14vw 15vw;
+}
+
+#homemain h1{
+    font-weight: 400;
+    font-size: 1.5vw;
+    letter-spacing: -1px;
+}
+
+.headings{
+    display: flex;
+    gap: 40px;
+}
+
+#homemain .headings h1:hover{
+    color: black;
+    cursor: pointer;
+}
+
+#homemain .headings h1{
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    font-size:6.2vw;
+    font-weight: 400;
+    letter-spacing: -3px;  
+}
+
+#homelast{
+    padding: 5vw 16vw;
+}
+
+#homelast p{
+    width: 50%;
+    font-size: 1.3vw;
+    font-weight: 500;
+    letter-spacing: -.5px;
+    font-weight: 400px;
+    line-height: 1.9rem;
+}
+
+#featured{
+    padding: 10vw 15vw;
+}
+
+.fheading>h1{
+    line-height: 1;
+    font-size: 4vw;
+    font-weight: 350;
+}
+
+
+.fheading>h1:nth-child(2){
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(0, 0, 0);
+}
+
+#fimages{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vw;
+    height: 100vh;
+    width: 100%;
+    /* padding: 5vw 15vw; */
+    /* border: 2px solid rgb(255, 0, 0); */
+}
+
+#fleft{
+    /* overflow: auto; */
+    overflow: hidden;
+    width: 45%;
+    height:inherit;
+
+}
+
+#fleft .fleftelm{
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#fright{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 45%;
+    height:inherit;
+}
+
+#fright .images{
+    width: 90%;
+    height: 90%;
+    background-color: red;
+}
+
+#fright .images img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fleftelm h3{
+    font-size: 1.3vw;
+    font-weight: 400;
+}
+
+.fleftelm h1{
+    font-size: 2.5vw;
+    line-height: 1;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 1.5vw 0;
+}
+
+.fleftelm h4{
+    opacity: .5;
+}
+
+.btndiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btndiv button{
+    width: 9vw;
+    height: 9vw;
+    padding: 1.3vw 2.5vw;
+    border-radius: 50%;
+    /* border: 2px solid rgb(178, 178, 178); */
+    background-color: rgb(0, 0, 0);
+    font-size: 1vw;
+    font-weight: 500;
+    letter-spacing: -.5px;
+    color: white;
+    cursor:pointer ;
+}
+
+.btndiv:hover{
+    filter: drop-shadow(0px 4px 14px rgb(92, 90, 90));
+}
+
+.magneto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dev{
+    width: 100%;
+    padding: 5vw 15vw;
+}
+
+#dev h1{
+    font-size: 3.8vw;
+    font-weight: 400;
+    width: 60%;
+    line-height: 1;
+}
+
+#dev p{
+    font-size: 1.5vw;
+    margin-top: 3vw;
+    letter-spacing: -.5px;
+    width: 60%;
+}
+
+#slides{
+    display: flex;
+    justify-content: space-between;
+    padding: 3vw 10vw;
+    gap: 2rem;
+}
+
+
+
+.slide{
+    width: 50%;
+}
+
+.slide .img{
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    border-radius: 10px;
+    /* background-color: yellow; */
+}
+
+.slide .img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.slide .tag{
+    width: fit-content;
+    background-color: #f0efef;
+    border-radius: 22px;
+    margin: 20px 0;
+    padding: 10px 22px
+}
+
+.slide h3{
+    font-size: 1.4vw;
+    font-weight: 400;
+    letter-spacing: -.5px;
+    text-transform: capitalize;
+}
+
+.footer{
+    box-shadow: 0px -9px 20px rgb(137, 137, 137);
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 30vw;
+}
+
+
+
+.footer h2{
+    padding: 2vw 14vw;
+    padding-bottom: 2vw;
+    font-size: 3vw;
+    font-weight: 300;
+    color: white;
+}
+
+.footer hr{
+    margin-left: 14vw;
+    width: 70vw;
+    margin-bottom: 2vw;
+    opacity: .7;
+    size: 5;
+}
+
+.footer-content{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2vw;
+    padding: 1vw 3vw;;
+}
+
+.boxes{
+    /* width: 20vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 1.5vw;
+    color: white;
+}
+
+
+.logoName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logoName svg{
+    width: 8vw;
+    background-color: white;
+    border-radius:20px ;
+}
+
+.copyright{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5rem;
+}
+
+.links a{
+    text-decoration: none;
+    color: white;
+    padding: .5rem;
+    border-radius: 50%;
+    transition: all .2s ease-in;
+    cursor: pointer;
+
+}
+
+.links .linkden:hover{
+    background-color: rgb(16, 85, 235);
+    color: rgb(255, 255, 255);
+}
+.links .discord:hover{
+    background-color: rgb(155, 16, 235);
+    color: rgb(255, 255, 255);
+}
+
+.txt{
+    width: 19vw;
+    height: 4vw;
+    border-radius:10px;
+    resize: none;
+}
+
+.mail label{
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+
+.mail{
+    margin-top: 2vw;
+    gap: 1vw;
+}
+
+
+.txt{
+    border: none;
+    outline: none;
+    padding: .5vw;
+}
+
+.txt::placeholder{
+    font-size: .9vw;
+    font-style: italic;
+    font-weight: 300;
+    /* padding: .5vw; */
+}
+
+.sbmt{
+    width: 3.5vw;
+    padding: .6vw 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    transition: all .25s ease-in-out;
+
+}
+
+.textButton{
+    display: flex;
+    align-items: center;
+    gap: .8vw;
+    padding-bottom: 1.5vw;
+}
+
+.contact h3{
+    font-size: 1.4vw;
+    font-weight: 350;
+    padding-right: .7rem;
+}
+
+.contact{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .3vw;
+}
+
+.contact a{
+    text-decoration: none;
+    color: white;
+    padding: .5vw;
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+
+
+    &:hover{
+        background-color: rgb(204, 0, 0);
+        color: white;
+    }
+}
+
+.contact .phone:hover{
+    background-color: rgb(0, 150, 45);
+     
+}
+
+.help h3{
+    font-weight: 300;
+    font-size: 1.5vw;
+    padding-bottom: 15px;
+}
+
+.help ul {
+    list-style: none;
+    /* list-style-position:inside ; */
+}
+.help li a{
+    text-decoration: none;
+    color: white;
+}
+
+.help ul li{
+    margin-bottom: 1vw;
+}
+
+/* hover effects on btns */
+
+.S:hover{
+   transform-origin: left center;
+   background-color: rgb(255, 81, 0);
+   color: white;
+   width: 6vw;
+}
+.R:hover{
+   transform-origin: left center;
+   background-color: rgb(16, 130, 236);
+   color: white;
+   width: 6vw;
+   
+}
+
+/* lenis for smooth scrolling */
+
+html.lenis, html.lenis body {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
